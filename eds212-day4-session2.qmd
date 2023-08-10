@@ -2,6 +2,8 @@
 title: "eds212-day4-session2"
 format: html
 editor: visual
+execute: 
+  warning: FALSE
 ---
 
 ## Creating Q on own
@@ -48,4 +50,24 @@ skim(penguins)
 ```{r}
 ggpairs(penguins)
 
+```
+
+## Making some more exploratory charts in ggplot2
+
+Histogram
+
+```{r}
+#Based on constant, put that out of aes- note "fill"
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species)) +
+  theme_minimal()
+
+```
+
+```{r}
+#Creating a box plot of bill lnegth vs species 
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
+  geom_boxplot(fill = "yellow", aes(color = island)) + 
+  geom_jitter() + 
+  theme_light()
 ```
