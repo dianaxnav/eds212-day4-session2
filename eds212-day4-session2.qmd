@@ -5,3 +5,47 @@ editor: visual
 ---
 
 ## Creating Q on own
+
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Basic Data Exploration
+
+-   names: get variable names
+
+-   dim: get data dim
+
+-   head: get first n lines (6 by default)
+
+-   tail: get last n lines (6 by default)
+
+-   summary: get basic summary stats
+
+```{r}
+names(penguins)
+```
+
+```{r}
+#If you do view in data chunk it will try to show in document so do not view data set in chunk to run so do view() in console
+#view(penguins)
+
+```
+
+```{r}
+#Will show you missing values, and how many variables there are. Informative when forming your own data set. It doesnt show relationships however
+summary(penguins)
+```
+
+```{r}
+#Skim gives quite a bit of information about different variables
+skim(penguins)
+```
+
+```{r}
+ggpairs(penguins)
+
+```
